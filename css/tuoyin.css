@@ -1,0 +1,120 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  background-color: #000;
+
+}
+section{
+  height: 100%;
+  display: flex;
+}
+div{
+  position: relative;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+  overflow: hidden;
+}
+div:hover{
+  background-color: #4cd5fa;
+  -webkit-box-reflect: below 0 linear-gradient(transparent,transparent);
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f470,
+              0 0 150px #03e9f450,
+              0 0 250px #03e9f450,
+              0 0 350px #03e9f450;
+  >span{
+    visibility: hidden;
+  }
+
+}
+
+span:nth-child(1){
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  left: 0;
+  background:linear-gradient(to right,transparent,70%,#03e9f4);
+  animation: anima-to-right 1.2s linear infinite;
+  transform: translateX(-100%);
+  z-index: 4;
+}
+@keyframes anima-to-right {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(200%);
+  }
+}
+span:nth-child(2){
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  background:linear-gradient(to bottom,transparent,70%,#03e9f4);
+  animation: anima-to-bottom 1.2s ease-in-out  infinite;
+  transform: translateY(200%);
+  animation-delay: 1s;
+  z-index: 3;
+
+
+}
+@keyframes anima-to-bottom {
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(200%);
+  }
+}
+ span:nth-child(3){
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  right: 0;
+  bottom: 0;
+  background:linear-gradient(to left,transparent,70%,#03e9f4);
+  animation: anima-to-left 1.2s ease-in-out  infinite;
+  transform: translateX(200%);
+  z-index: 2;
+
+}
+
+@keyframes anima-to-left {
+  0%{
+    transform: translateX(200%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+span:nth-child(4){
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background:linear-gradient(to top,transparent,70%,#03e9f4);
+  animation: anima-to-top 1.2s ease-in-out  infinite;
+  transform: translateY(200%);
+  animation-delay: 1s;
+  z-index: 1;
+
+}
+@keyframes anima-to-top {
+  0%{
+    transform: translateY(200%);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
+
